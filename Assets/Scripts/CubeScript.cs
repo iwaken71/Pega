@@ -6,6 +6,7 @@ public class CubeScript : MonoBehaviour {
 	int number;
 	public TextMesh mesh;
 	public bool alive = true;
+	float timer = 0.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +17,7 @@ public class CubeScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		timer += Time.deltaTime;
 		if (alive) {
 			gameObject.layer = LayerMask.NameToLayer("Default");
 			mesh.text =  number.ToString ();
